@@ -5,12 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAMES</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
-    
-    <h1>test</h1>
+ <!-- MAIN NAVIGATION BAR    -->
+    <div class="bg-light main-navbars">
+      <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="#">Rock Paper Scissors</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Mind Game</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Disabled</a>
+      </nav>
+    </div>
+ <!-- END OF MAIN NAVIGATION BAR    -->    
+
+<!-- ROCK PAPER SCISSORS SECTION -->
+<section class="rps-section">
+ <div class="card">
+    <div class="card-header">
+      ROCK PAPER SCISSORS
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">YOUR CHOICE: <span id="your-choice"></span></h5>
+      <h5 class="card-title">COMPUTER CHOICE: <span id="computer-choice"></span></h5>
+     <h5 class="card-title">RESULT: <span id="result"></span></h5>
+      <a href="#" id="Rock" class="btn btn-primary buttons">ROCK</a>
+      <a href="#" id="Paper" class="btn btn-primary buttons">PAPER</a>
+      <a href="#" id="Scissors" class="btn btn-primary buttons">SCISSORS</a>
+    </div>
+  </div>
+</section>
+<!-- END OFROCK PAPER SCISSORS SECTION -->
+
+<!-- MEMORY GAME SECTION -->
+<section class="mindgame-section section">
+    <div class="card">
+       <div class="card-header">MEMORY GAME </div>
+       <div class="card-body">
+
+         <h5 class="card-title">SCORE: <span id="mindgame-result"></span></h5>
+         
+         <div id="grid"></div>
+        
+       </div>
+     </div>
+   </section>
+   <!-- END MEMORY GAME SECTION -->
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="assets/JavaSrcipt/index.js"></script>
+    <script src="assets/JavaSrcipt/mindgame.js"></script>
 </body>
 </html>
