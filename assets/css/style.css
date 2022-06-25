@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.nav {
-  padding: 20px;
-}
-
 /*!
  * Bootstrap v5.2.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10732,6 +10728,10 @@ textarea.form-control-lg {
 
 .rps-section {
   margin: 20px 300px;
+}
+
+.mindgame-section {
+  margin: 10px 200px;
 }
 
 /*# sourceMappingURL=style.css.map */
