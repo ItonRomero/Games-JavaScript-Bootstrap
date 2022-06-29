@@ -10734,4 +10734,25 @@ textarea.form-control-lg {
   margin: 10px 200px;
 }
 
+.whac-a-mole-section {
+  margin: 10px 150px;
+}
+
+#grid-test {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  height: 200px;
+  width: 200px;
+  border: black solid 1px;
+}
+
+.mole {
+  background: blue;
+}
+
 /*# sourceMappingURL=style.css.map */

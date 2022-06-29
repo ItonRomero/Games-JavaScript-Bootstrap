@@ -54,6 +54,8 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 
+
+
 const gridDisplay = document.querySelector('#grid')
 const resultDisplayss = document.querySelector('#mindgame-result')
 let cardsChosen = []
@@ -62,16 +64,18 @@ const cardsWon = []
 
 
 
-// second
+// second  Creating Card Display
 function createBoard(){
 
-    for(i = 0; i < cardArray.length ; i++){
-      const card = document.createElement('img')
-      card.setAttribute('src', 'assets/images/mindgame/blank.png')
-      card.setAttribute('data-id', i )
-      card.addEventListener('click', flipcard)
-      gridDisplay.append(card)
+    for( let i = 0; i < cardArray.length; i++){
+        const cards = document.createElement('img')
+        cards.setAttribute('src', 'assets/images/mindgame/blank.png') 
+        cards.setAttribute('data-id', i)
+        cards.addEventListener('click', flipcard)
+        gridDisplay.appendChild(cards)
+        console.log(cards)
     }
+    
 }
 createBoard()
 
@@ -79,25 +83,28 @@ createBoard()
 
 
 //forth
-function checkMatch(){
+ function checkMatch(){
+
   const cards = document.querySelectorAll('img')
   const optionOneId = cardChosenIds[0]
   const optionTwoId = cardChosenIds[1]
-  console.log("check for match")
+
   if(optionOneId == optionTwoId) {
     cards[optionOneId].setAttribute('src', 'assets/images/mindgame/blank.png')
     cards[optionTwoId].setAttribute('src', 'assets/images/mindgame/blank.png')
       alert('You have clicked the same image!')
   }
 
-  if (cardsChosen[0] == cardsChosen[1]){
+  else if (cardsChosen[0] == cardsChosen[1]){
       alert("YOU FOUND A MATCH")
       cards[optionOneId].setAttribute('src', 'assets/images/mindgame/white.png')
       cards[optionTwoId].setAttribute('src', 'assets/images/mindgame/white.png')
       cards[optionOneId].removeEventListener('click', flipcard) 
       cards[optionTwoId].removeEventListener('click', flipcard) 
       cardsWon.push(cardsChosen)
-    } else {
+    } 
+
+    else {
         cards[optionOneId].setAttribute('src', 'assets/images/mindgame/blank.png')
         cards[optionTwoId].setAttribute('src', 'assets/images/mindgame/blank.png')
         alert('Sorry Try Again')
@@ -117,16 +124,15 @@ function checkMatch(){
 // third 
 
 function flipcard(){
-    const cardId = this.getAttribute('data-id')
-    cardsChosen.push(cardArray[cardId].name)
-    cardChosenIds.push(cardId)
-    console.log(cardsChosen)
-    console.log(cardChosenIds)
-    this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2) {
-        setTimeout(checkMatch, 500) 
-            
-    }
+      const cardId  = this.getAttribute('data-id')
+      cardsChosen.push(cardArray[cardId].name) 
+      cardChosenIds.push(cardId)
+      this.setAttribute('src', cardArray[cardId].img)
+      if(cardsChosen.length == 2) {
+          setTimeout(checkMatch, 500)
+      }
+      console.log(cardChosenIds)  
+      console.log(cardsChosen)
 }
 
 
